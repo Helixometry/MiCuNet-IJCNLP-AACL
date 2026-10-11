@@ -1,0 +1,51 @@
+# MiCuNet Configuration File
+
+# Model Architecture
+model:
+  input_dim: 768              # Combined feature dimension
+  hidden_dim: 512             # Hidden layer dimension
+  num_emotions: 7             # Number of emotion classes
+  num_sources: 3              # Number of source/generator classes
+  dropout: 0.3                # Dropout rate
+
+# Training Parameters
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.001        # Adam optimizer learning rate
+  weight_decay: 1e-5          # L2 regularization
+  gradient_clip: 1.0          # Gradient clipping value
+
+# Learning Rate Scheduling
+scheduler:
+  type: ReduceLROnPlateau
+  factor: 0.5
+  patience: 5
+  min_lr: 1e-6
+
+# Data Configuration
+data:
+  train_dir: data/english/train
+  val_dir: data/english/val
+  test_dir: data/english/test
+  sr: 16000                   # Sample rate
+  duration: 3.0               # Audio duration in seconds
+  n_mels: 128                 # Number of mel bands
+  n_mfcc: 13                  # Number of MFCC coefficients
+
+# Device and Reproducibility
+device: cuda                  # cuda or cpu
+seed: 42
+num_workers: 4
+
+# Logging and Checkpointing
+logging:
+  interval: 10                # Log metrics every N batches
+  tensorboard: true
+  log_dir: results/logs
+
+# Checkpointing
+checkpointing:
+  save_interval: 5            # Save checkpoint every N epochs
+  keep_best: true
+  save_dir: models/checkpoints

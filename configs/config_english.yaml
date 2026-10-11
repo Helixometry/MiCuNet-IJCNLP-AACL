@@ -1,0 +1,44 @@
+# Configuration for English Emo-Fake Dataset
+
+model:
+  input_dim: 768
+  hidden_dim: 512
+  num_emotions: 7
+  num_sources: 3
+  dropout: 0.3
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 1e-5
+  gradient_clip: 1.0
+
+scheduler:
+  type: ReduceLROnPlateau
+  factor: 0.5
+  patience: 5
+  min_lr: 1e-6
+
+data:
+  train_dir: data/english/train
+  val_dir: data/english/val
+  test_dir: data/english/test
+  sr: 16000
+  duration: 3.0
+  n_mels: 128
+  n_mfcc: 13
+
+device: cuda
+seed: 42
+num_workers: 4
+
+logging:
+  interval: 10
+  tensorboard: true
+  log_dir: results/logs
+
+checkpointing:
+  save_interval: 5
+  keep_best: true
+  save_dir: models/checkpoints
