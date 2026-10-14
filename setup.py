@@ -7,7 +7,6 @@ setup(
     name="MiCuNet",
     version="1.0.0",
     author="Girish, Mohd Mujtaba Akhtar, Farhan Sheth, Muskaan Singh",
-    author_email="girish281003@gmail.com",
     description="Multi-Curvature Learning for Emotional Manipulation Detection in Synthetic Speech",
     long_description=long_description,
     long_description_content_type="text/markdown",
