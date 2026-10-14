@@ -276,13 +276,6 @@ For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
 - ACL/IJCNLP-AACL 2025 organizers
 - All contributors and reviewers
 
-## Questions & Support
-
-For questions, issues, or suggestions:
-
-- **GitHub Issues**: [Create an issue](https://github.com/gir-ish/MiCuNet-IJCNLP-AACL/issues)
-- **Email**: girish281003@gmail.com
-
 ## Related Work
 
 - [Speech Foundation Models](https://huggingface.co/spaces/models)
